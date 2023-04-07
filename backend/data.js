@@ -13,7 +13,7 @@ const data = {
       description: "High quality shirt",
     },
     {
-      name: "Lacoste Men's Pima Cotton T-Shirt",
+      name: "Lacoste Men's Pima T-Shirt",
       slug: "lacoste-men-s-crew-neck-pima-cotton-jersey-t-shirt",
       category: "Shirts",
       image: "images/p2.jpg",
@@ -25,7 +25,7 @@ const data = {
       description: "Pima Cotton jersey",
     },
     {
-      name: "DeFacto Slim Fit Cotton T-Shirt",
+      name: "DeFacto Cotton T-Shirt",
       slug: "defacto-slim-fit-ribana-cotton-athlete",
       category: "Shirts",
       image: "images/p3.jpg",
@@ -61,7 +61,7 @@ const data = {
       description: "Sweatpants in lightweight cotton sweatshirt fabric with covered elastication",
     },
     {
-      name: "DeFacto Regular Fit Cargo Trousers",
+      name: "DeFacto Regular Fit Cargo",
       slug: "defacto-regular-fit-cargo-pocket-detail-woven-trousers",
       category: "Pants",
       image: "images/p6.jpg",
