@@ -33,6 +33,8 @@ function App() {
                   {cart.cartItems.length > 0 && (
                     <Badge pill bg="danger">
                       {cart.cartItems.length}
+                      {/* if you want the 'quantity' of each product to be counted/displayed in the 'Cart (Navbar)', use code below */}
+                      {/* {cart.cartItems.reduce((a, c) => a + c.quantity, 0)} */}
                     </Badge>
                   )}
                 </Link>

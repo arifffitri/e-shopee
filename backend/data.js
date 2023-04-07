@@ -1,6 +1,7 @@
 const data = {
   products: [
     {
+      _id: "1",
       name: "H&M Relaxed Fit T-shirt",
       slug: "hm-relaxed-tshirt",
       category: "Shirts",
@@ -13,6 +14,7 @@ const data = {
       description: "High quality shirt",
     },
     {
+      _id: "2",
       name: "Lacoste Men's Pima T-Shirt",
       slug: "lacoste-men-s-crew-neck-pima-cotton-jersey-t-shirt",
       category: "Shirts",
@@ -25,6 +27,7 @@ const data = {
       description: "Pima Cotton jersey",
     },
     {
+      _id: "3",
       name: "DeFacto Cotton T-Shirt",
       slug: "defacto-slim-fit-ribana-cotton-athlete",
       category: "Shirts",
@@ -37,6 +40,7 @@ const data = {
       description: "DeFacto Top that gives you comfort and flexibility to move",
     },
     {
+      _id: "4",
       name: "H&M Regular Tapered Jeans",
       slug: "hm-regular-tapered-jeans-blue",
       category: "Pants",
@@ -49,6 +53,7 @@ const data = {
       description: "5-pocket jeans in washed, stretch cotton denim with a regular waist, zip fly and button and gently tapered legs",
     },
     {
+      _id: "5",
       name: "H&M Regular Fit Sweatpants",
       slug: "hm-regular-fit-sweatpants",
       category: "Pants",
@@ -61,6 +66,7 @@ const data = {
       description: "Sweatpants in lightweight cotton sweatshirt fabric with covered elastication",
     },
     {
+      _id: "6",
       name: "DeFacto Regular Fit Cargo",
       slug: "defacto-regular-fit-cargo-pocket-detail-woven-trousers",
       category: "Pants",
