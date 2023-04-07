@@ -13,10 +13,25 @@ main {
   flex: 1;
 }
 
+.btn-primary {
+  background-color: #f0c040;
+  color: black;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: black;
+  color: #f0c040;
+}
+
 .products {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+}
+
+.rating span {
+  color: #ffc000;
 }
 
 .product {
