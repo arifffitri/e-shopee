@@ -8,6 +8,7 @@ import Container from "react-bootstrap/Container";
 import { LinkContainer } from "react-router-bootstrap";
 import { Store } from "./Store";
 import { useContext } from "react";
+import CartScreen from "./screens/CartScreen";
 
 // INFO MATTER
 // when use 'a' tag in react router dom, the browser will refresh everytime 'a' tag is clicked.
@@ -32,9 +33,9 @@ function App() {
                   Cart
                   {cart.cartItems.length > 0 && (
                     <Badge pill bg="danger">
-                      {cart.cartItems.length}
+                      {/* {cart.cartItems.length} */}
                       {/* if you want the 'quantity' of each product to be counted/displayed in the 'Cart (Navbar)', use code below */}
-                      {/* {cart.cartItems.reduce((a, c) => a + c.quantity, 0)} */}
+                      {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
                     </Badge>
                   )}
                 </Link>
@@ -46,6 +47,7 @@ function App() {
           <Container className="mt-3 mb-3">
             <Routes>
               <Route path="/product/:slug" element={<ProductScreen />} />
+              <Route path="/cart" element={<CartScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>
