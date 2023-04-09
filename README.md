@@ -1,9 +1,5 @@
-# MERN E-SHOPEE
+# MERN E-SHOPEE Website
 
-# Lessons
-
-1.  Introduction
-2.  INSTALL Tools
 3.  CREATE React App
 4.  CREATE Git Repository
 5.  List Products
@@ -87,3 +83,7 @@
     1. create User model
     2. seed sample users
     3. create user routes
+22. CREATE Signin Backend API
+    1. create signin api
+    2. npm install jsonwebtoken
+    3. define generateToken
