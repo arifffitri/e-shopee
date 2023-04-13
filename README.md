@@ -91,21 +91,25 @@
     1. handle submit action
     2. save token in store and local storage
     3. show user's name in header
-24. Create Shipping Screen
+24. CREATE Shipping Screen
     1. create form inputs
     2. handle save shipping address
     3. add checkout wizard bar
-25. Create Sign Up Screen
+25. CREATE Sign Up Screen
     1. create input forms
     2. handle submit
     3. create backend api
 26. Implement Select Payment Method Screen
     1. create input forms
     2. handle submit
-27. Create Place Order Screen
+27. CREATE Place Order Screen
     1. show cart items, payment and address
     2. handle place order action
     3. create order create api
 28. Implement Place Order Action
     1. handle place order action
     2. create order create api
+29. CREATE Order Screen
+    1. create backend api for order/:id
+    2. fetch order api in frontend
+    3. show order information in 2 columns

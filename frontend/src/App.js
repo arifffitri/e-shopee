@@ -17,6 +17,7 @@ import SignupScreen from "./screens/SignupScreen";
 import ShippingAddressScreen from "./screens/ShippingAddressScreen";
 import PaymentMethodScreen from "./screens/PaymentMethodScreen";
 import PlaceOrderScreen from "./screens/PlaceOrderScreen";
+import OrderScreen from "./screens/OrderScreen";
 
 // INFO MATTER
 // when use 'a' tag in react router dom, the browser will refresh everytime 'a' tag is clicked.
@@ -87,6 +88,7 @@ function App() {
               <Route path="/shipping" element={<ShippingAddressScreen />} />
               <Route path="/payment" element={<PaymentMethodScreen />} />
               <Route path="/placeorder" element={<PlaceOrderScreen />} />
+              <Route path="/order/:id" element={<OrderScreen />} />
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>
