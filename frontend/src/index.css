@@ -19,11 +19,11 @@ main {
   border-color: black;
 }
 
-.btn-primary:hover {
+/* .btn-primary:hover {
   background-color: black;
   color: #f0c040;
   border-color: #f0c040;
-}
+} */
 
 .products {
   display: flex;
