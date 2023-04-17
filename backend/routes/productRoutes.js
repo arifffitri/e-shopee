@@ -1,6 +1,7 @@
 // create a route to put all product related API in a separate file
 
 import express from "express";
+import expressAsyncHandler from "express-async-handler";
 import Product from "../models/productModel.js";
 
 const productRouter = express.Router();
@@ -9,6 +10,15 @@ productRouter.get("/", async (req, res) => {
   const products = await Product.find();
   res.send(products);
 });
+
+// route for categories
+productRouter.get(
+  "/categories",
+  expressAsyncHandler(async (req, res) => {
+    const categories = await Product.find().distinct("category");
+    res.send(categories);
+  })
+);
 
 // Backend API for returning Product information based on 'slug'
 productRouter.get("/slug/:slug", async (req, res) => {
