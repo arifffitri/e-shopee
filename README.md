@@ -147,11 +147,15 @@
     1. show filters
     2. create api for searching products
     3. display results
-36. CREATE Admin Menu
+36. CREATE Admin Menu (Admin)
     1. define protected route component
     2. define admin route component
     3. add menu for admin in header
-37. CREATE Dashboard Screen
+37. CREATE Dashboard Screen (Admin)
     1. create dashboard ui
     2. implement backend api
     3. connect ui to backend
+38. Manage Products (Admin)
+    1. create products list ui
+    2. implement backend api
+    3. fetch data
