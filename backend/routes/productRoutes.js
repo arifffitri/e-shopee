@@ -60,6 +60,22 @@ productRouter.put(
   })
 );
 
+// route for deleting existing product (Admin)
+productRouter.delete(
+  "/:id",
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const product = await Product.findById(req.params.id);
+    if (product) {
+      await product.deleteOne();
+      res.send({ message: "Product Deleted" });
+    } else {
+      res.status(404).send({ message: "Product Not Found" });
+    }
+  })
+);
+
 // route for search/filter
 // PAGE_SIZE = want to display how many product per page
 const PAGE_SIZE = 3;
