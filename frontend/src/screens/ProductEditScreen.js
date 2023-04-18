@@ -39,7 +39,6 @@ export default function ProductEditScreen() {
 
   const { state } = useContext(Store);
   const { userInfo } = state;
-
   const [{ loading, error, loadingUpdate }, dispatch] = useReducer(reducer, {
     loading: true,
     error: "",
@@ -100,7 +99,9 @@ export default function ProductEditScreen() {
           headers: { Authorization: `Bearer ${userInfo.token}` },
         }
       );
-      dispatch({ type: "UPDATE_SUCCESS" });
+      dispatch({
+        type: "UPDATE_SUCCESS",
+      });
       toast.success("Product updated successfully");
       navigate("/admin/products");
     } catch (err) {

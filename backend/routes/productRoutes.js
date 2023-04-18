@@ -37,7 +37,7 @@ productRouter.post(
 
 // route for updating existing product (Admin)
 productRouter.put(
-  ":/id",
+  "/:id",
   isAuth,
   isAdmin,
   expressAsyncHandler(async (req, res) => {
