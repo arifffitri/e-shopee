@@ -187,3 +187,7 @@
     1. add deliver button
     2. handle click action
     3. implement backend api for deliver
+46. Delete Order (Admin)
+    1. add delete button
+    2. handle click action
+    3. implement backend api for delete
