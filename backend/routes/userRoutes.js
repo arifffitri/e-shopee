@@ -6,7 +6,7 @@ import { isAuth, isAdmin, generateToken } from "../utils.js";
 
 const userRouter = express.Router();
 
-//GET orders info for User (Admin)
+//GET users info for User (Admin)
 userRouter.get(
   "/",
   isAuth,
@@ -14,6 +14,40 @@ userRouter.get(
   expressAsyncHandler(async (req, res) => {
     const users = await User.find({});
     res.send(users);
+  })
+);
+
+//GET users info for specific User (Admin)
+userRouter.get(
+  "/:id",
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user) {
+      res.send(user);
+    } else {
+      res.status(404).send({ message: "User Not Found" });
+    }
+  })
+);
+
+//UPDATE users info for specific User (Admin)
+userRouter.put(
+  "/:id",
+  isAuth,
+  isAdmin,
+  expressAsyncHandler(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (user) {
+      user.name = req.body.name || user.name;
+      user.email = req.body.email || user.email;
+      user.isAdmin = Boolean(req.body.isAdmin);
+      const updatedUser = await user.save();
+      res.send({ message: "User Updated", user: updatedUser });
+    } else {
+      res.status(404).send({ message: "User Not Found" });
+    }
   })
 );
 

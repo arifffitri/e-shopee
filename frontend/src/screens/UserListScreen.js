@@ -1,9 +1,9 @@
 import axios from "axios";
 import React, { useContext, useEffect, useReducer } from "react";
 // import { toast } from "react-toastify";
-// import Button from "react-bootstrap/Button";
+import Button from "react-bootstrap/Button";
 import { Helmet } from "react-helmet-async";
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
 import { Store } from "../Store";
@@ -33,7 +33,7 @@ const reducer = (state, action) => {
 };
 
 export default function OrderListScreen() {
-  // const navigate = useNavigate();
+  const navigate = useNavigate();
   const { state } = useContext(Store);
   const { userInfo } = state;
   const [{ loading, error, users }, dispatch] = useReducer(reducer, {
@@ -109,7 +109,11 @@ export default function OrderListScreen() {
                 <td>{user.name}</td>
                 <td>{user.email}</td>
                 <td>{user.isAdmin ? "YES" : "NO"}</td>
-                <td></td>
+                <td>
+                  <Button type="button" variant="light" onClick={() => navigate(`/admin/user/${user._id}`)}>
+                    Edit
+                  </Button>
+                </td>
               </tr>
             ))}
           </tbody>
