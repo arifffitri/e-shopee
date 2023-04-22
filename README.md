@@ -209,3 +209,8 @@
     1. create submit review form
     2. handle submit
     3. implement backend api for review
+51. Forget Reset Password
+    1. add resetToken to userModel
+    2. implement backend api for forger password
+    3. create forget password screen
+    4. create reset password screen
