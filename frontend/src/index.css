@@ -1,3 +1,23 @@
+/* GOOGLE FONTS */
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap");
+
+:root {
+  /* HERO SECTION */
+  /* Font Size */
+  --header-1: 64px;
+  --header-2: 48px;
+  --header-3: 42px;
+  --header-4: 32px;
+  --text-medium: 18px;
+  --text-regular: 16px;
+  --text-light: 13px;
+  /* Font Weight */
+  --font-weight-bold: 700;
+  --font-weight-semi-bold: 600;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+}
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
@@ -15,9 +35,12 @@ main {
 
 .btn-primary,
 .btn-outline-primary {
-  background-color: #f0c040;
-  color: black;
-  border-color: black;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  background-color: #212f38;
+  color: #d5d7d7;
+  border-color: #212f38;
+  box-shadow: 10px;
 }
 
 /* .btn-primary:hover {
@@ -72,10 +95,31 @@ main {
   color: #f08000;
 }
 
-/* sidebar */
+/* NAVBAR */
 .navbar-brand {
   font-weight: bold;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 3rem;
+  margin-left: 2rem;
 }
+
+@media (min-width: 1024px) {
+  .navbar-brand {
+    margin-left: 35rem;
+  }
+}
+
+@media (max-width: 700px) {
+  .copy {
+    text-align: center;
+  }
+
+  .cta {
+    margin-bottom: 50px;
+  }
+}
+
+/* SIDEBAR */
 .side-navbar {
   width: 240px;
   height: 100%;
@@ -96,4 +140,68 @@ main {
 
 .text-bold {
   font-weight: bold;
+}
+
+/* HERO */
+
+section.hero {
+  margin: 3rem 0;
+}
+
+.hero-img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+
+  border-radius: 80px 0 80px 0;
+  border-spacing: 1em 1em;
+  padding: 0 2em 2em 0;
+  border-right: 1px solid #212f38;
+  border-bottom: 1px solid #212f38;
+}
+
+.icon-image {
+  margin-right: 8px;
+}
+
+.text-hero-bold,
+.text-hero-regular {
+  margin: 24px 0;
+}
+
+.text-hero-bold {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: var(--header-1);
+  font-weight: 400;
+  padding-top: 50px;
+  line-height: 100px;
+}
+
+.text-hero-regular {
+  color: black;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 2;
+  margin-bottom: 50px;
+}
+
+.testimoni-brand {
+  width: 100%;
+}
+
+/* CATEGORY */
+
+.categories {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  margin: 100px 0;
+}
+
+.category {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
 }

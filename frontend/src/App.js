@@ -75,22 +75,27 @@ function App() {
 
   return (
     <BrowserRouter>
-      <div className={sidebarIsOpen ? "d-flex flex-column site-container active-cont" : "d-flex flex-column site-container"}>
+      {/* <div className={sidebarIsOpen ? "d-flex flex-column site-container active-cont" : "d-flex flex-column site-container"}> */}
+      <div className="d-flex flex-column site-container">
         <ToastContainer position="bottom-center" limit={1} />
+        {/* Navbar Section */}
         <header>
-          <Navbar bg="dark" variant="dark" expand="lg">
+          <Navbar bg="light" variant="light" expand="lg">
             <Container>
-              <Button variant="dark" onClick={() => setSidebarIsOpen(!sidebarIsOpen)}>
+              {/* <Button variant="dark" onClick={() => setSidebarIsOpen(!sidebarIsOpen)}>
                 <i className="fas fa-bars"></i>
-              </Button>
+              </Button> */}
+              <div className="position-nav">
+                <SearchBox />
+              </div>
               <LinkContainer to="/">
-                <Navbar.Brand>e-shopee</Navbar.Brand>
+                <Navbar.Brand>ZORO</Navbar.Brand>
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
-                <SearchBox />
                 <Nav className="me-auto w-100 justify-content-end">
                   <Link to="/cart" className="nav-link">
+                    <i class="fa-solid fa-cart-shopping icon-image"></i>
                     Cart
                     {cart.cartItems.length > 0 && (
                       <Badge pill bg="danger">
@@ -115,6 +120,7 @@ function App() {
                     </NavDropdown>
                   ) : (
                     <Link className="nav-link" to="/signin">
+                      <i class="fa-solid fa-user icon-image"></i>
                       Sign in
                     </Link>
                   )}
@@ -140,6 +146,8 @@ function App() {
             </Container>
           </Navbar>
         </header>
+        {/* End of Navbar Section */}
+
         {/* Sidebar Section */}
         <div className={sidebarIsOpen ? "active-nav side-navbar d-flex justify-content-between flex-wrap flex-column" : "side-navbar d-flex justify-content-between flex-wrap flex-column"}>
           <Nav className="flex-column text-white w-100 p-2">
@@ -155,6 +163,8 @@ function App() {
             ))}
           </Nav>
         </div>
+        {/* End of Sidebar Section */}
+
         <main>
           <Container className="mt-3 mb-3">
             <Routes>

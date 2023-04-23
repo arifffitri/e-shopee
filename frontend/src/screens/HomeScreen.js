@@ -7,6 +7,12 @@ import Product from "../components/Product";
 import { Helmet } from "react-helmet-async";
 import LoadingBox from "../components/LoadingBox";
 import MessageBox from "../components/MessageBox";
+import Card from "react-bootstrap/Card";
+import CardGroup from "react-bootstrap/CardGroup";
+import Image from "react-bootstrap/Image";
+import Fade from "react-reveal/Fade";
+
+import { Link } from "react-router-dom";
 
 // import data from "../data";
 
@@ -53,28 +59,111 @@ function HomeScreen() {
   }, []);
 
   return (
-    <div>
-      <Helmet>
-        <title>E-Shopee</title>
-      </Helmet>
-      <h1>Featured products</h1>
-      <div className="products">
-        {/* create a loading text "Loading..." using IF ELSE shorthand statement */}
-        {loading ? (
-          <LoadingBox />
-        ) : error ? (
-          <MessageBox variant="danger">{error}</MessageBox>
-        ) : (
-          <Row>
-            {products.map((product) => (
-              <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
-                <Product product={product}></Product>
+    <Fade bottom distance="20%" duration={1500}>
+      <div>
+        <Helmet>
+          <title>E-Shopee</title>
+        </Helmet>
+
+        {/* Hero Section */}
+        <section className="hero">
+          <div className="container">
+            <Row>
+              <Col md={6} className="copy">
+                <div>
+                  <div className="text-hero-bold">Collections</div>
+                  <div className="text-hero-regular">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis accumsan euismod lacus, et ultrices risus sagittis ac.</div>
+                  <div className="cta">
+                    <Link to="/" className="btn btn-primary">
+                      <i class="fa-solid fa-bag-shopping icon-image"></i>
+                      Shop Now
+                    </Link>
+                  </div>
+                </div>
               </Col>
-            ))}
+              <Col md={6}>
+                <img src="../images/p1.jpg" alt="hero" className="hero-img" />
+              </Col>
+            </Row>
+          </div>
+        </section>
+        {/* End of Hero Section */}
+
+        {/* Testimoni Brand Setion */}
+        <section class="testimoni-brand">
+          <div class="container">
+            <Row>
+              <Col md={12} className="mt-5 text-center">
+                <Image src="../images/testimonial-brand.png" alt="testimoni-brand" className="testimoni-brand" />
+              </Col>
+            </Row>
+          </div>
+        </section>
+        {/* End of Testimoni Brand Section */}
+
+        {/* Categories Section */}
+        <div className="categories">
+          <Row>
+            <CardGroup>
+              <Card border="light" className="m-1">
+                <Link to="/search?category=Shirts" className="text-dark">
+                  <Card.Img src="../images/shirt.jpg" alt="Card image" className="category" />
+                  <Card.ImgOverlay>
+                    <Card.Title>Shirts</Card.Title>
+                  </Card.ImgOverlay>
+                </Link>
+              </Card>
+              <Card border="light" className="m-1">
+                <Link to="/search?category=Pants" className="text-dark">
+                  <Card.Img src="../images/pants.jpg" alt="Card image" className="category" />
+                  <Card.ImgOverlay>
+                    <Card.Title>Pants</Card.Title>
+                  </Card.ImgOverlay>
+                </Link>
+              </Card>
+            </CardGroup>
+            <CardGroup>
+              <Card border="light" className="m-1">
+                <Link to="/search?category=Shoes" className="text-dark">
+                  <Card.Img src="../images/Shoes.jpg" alt="Card image" className="category" />
+                  <Card.ImgOverlay>
+                    <Card.Title>Shoes</Card.Title>
+                  </Card.ImgOverlay>
+                </Link>
+              </Card>
+              <Card border="light" className="m-1">
+                <Link to="/search?category=Socks" className="text-dark">
+                  <Card.Img src="../images/Socks.jpg" alt="Card image" className="category" />
+                  <Card.ImgOverlay>
+                    <Card.Title>Socks</Card.Title>
+                  </Card.ImgOverlay>
+                </Link>
+              </Card>
+            </CardGroup>
           </Row>
-        )}
+        </div>
+
+        {/* End of Categories Section */}
+
+        <h1>Featured products</h1>
+        <div className="products">
+          {/* create a loading text "Loading..." using IF ELSE shorthand statement */}
+          {loading ? (
+            <LoadingBox />
+          ) : error ? (
+            <MessageBox variant="danger">{error}</MessageBox>
+          ) : (
+            <Row>
+              {products.map((product) => (
+                <Col key={product.slug} sm={6} md={4} lg={3} className="mb-3">
+                  <Product product={product}></Product>
+                </Col>
+              ))}
+            </Row>
+          )}
+        </div>
       </div>
-    </div>
+    </Fade>
   );
 }
 
